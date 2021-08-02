@@ -1,13 +1,15 @@
 import userResolver from './user';
-
+import recipeResolver from './recipe';
 console.log(userResolver.mutation)
 const Query = {
-    ...userResolver.query
+    ...userResolver.query,
+    ...recipeResolver.query
 }
 
 
 const Mutation = {
-    ...userResolver.mutation
+    ...userResolver.mutation,
+    ...recipeResolver.mutation
 }
 
 module.exports = { Query, Mutation };

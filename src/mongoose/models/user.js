@@ -56,6 +56,12 @@ const UserSchema = new Schama({
         trim: true,
         default: true
     },
+    recipes:[{ 
+        type : mongoose.ObjectId, 
+        ref: 'User',
+        default: []
+    }],
+    
     gender: {
         type: String,
         trim: true,
