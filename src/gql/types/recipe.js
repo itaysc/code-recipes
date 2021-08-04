@@ -18,6 +18,8 @@ type Query {
 type Mutation {
     createRecipe(input: CreateRecipeInput): Recipe
     deleteRecipeById(id: String!): String
+    addThumbUp(id: String!): Recipe
+    addThumbDown(id: String!): Recipe
 }
 
 input CreateRecipeInput {

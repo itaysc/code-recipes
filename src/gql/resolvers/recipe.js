@@ -21,6 +21,14 @@ module.exports =  {
         deleteRecipeById: async(root, {id})=>{
             const res = await service.deleteRecipeById(id);
             return res.payload;
+        },
+        addThumbUp: async(root, {id})=>{
+            const res = await service.addThumbUp(id);
+            return res.payload;
+        },
+        addThumbDown: async(root, {id})=>{
+            const res = await service.addThumbDown(id);
+            return res.payload;
         }
     }
 }

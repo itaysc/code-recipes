@@ -45,6 +45,29 @@ export default () => {
                 }
             })
         },
-
+        addThumbUp: (id)=>{
+            return new Promise(async(resolve, reject)=>{
+                try{
+                    const res = await Recipe.updateOne({_id: id}, {
+                        $inc:{thumbsUp: 1}
+                    });
+                    return resolve({status: 200, payload: res});
+                }catch(err){
+                    reject({status: 500, payload: err});
+                }
+            })
+        },
+        addThumbDown: (id)=>{
+            return new Promise(async(resolve, reject)=>{
+                try{
+                    const res = await Recipe.updateOne({_id: id}, {
+                        $inc:{thumbsUp: -1}
+                    });
+                    return resolve({status: 200, payload: res});
+                }catch(err){
+                    reject({status: 500, payload: err});
+                }
+            })
+        },
     };
 };

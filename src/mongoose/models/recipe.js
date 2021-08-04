@@ -27,6 +27,10 @@ const RecipeSchema = new Schama({
         min: [2, 'Language should be at least 2 characters long'],
         required: true
     },
+    thumbsUp:{
+        type: Number,
+        default: 0
+    },
     updatedAt:{
         type: Date,
     },
@@ -51,14 +55,14 @@ RecipeSchema.post('save', async function(next) {
         user.recipes.push(recipe._id);
         await user.save();
     }
-    next();
+    //next();
 });
-RecipeSchema.pre('delete', async function(next) {
-    var recipe = this;
+RecipeSchema.pre('deleteOne', { query: true, document: true }, async function(next) {
+    var q = this;
     const User = mongoose.model('user');
-    console.log("@@@@@@@@@@@@@@@@@@ deleting recipe from user")
+    console.log("@@@@@@@@@@@@@@@@@@ deleting recipe from user ", q._conditions._id)
     await User.updateOne({userName: recipe.userName}, {
-        $pull:{recipes: recipe._id}
+        $pull:{recipes: q._conditions._id}
     });
     next();
 });
