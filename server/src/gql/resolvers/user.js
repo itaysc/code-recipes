@@ -1,6 +1,7 @@
+import { PubSub } from 'graphql-subscriptions';
 import userService from '../../services/user';
 const service = userService();
-console.log("*****   ", typeof service)
+const pubSub = new PubSub();
 module.exports =  {
     query:{
         getUserByUserName: async(root, {userName})=>{
@@ -20,7 +21,13 @@ module.exports =  {
         createUser: async(root, {input})=>{
             console.log("inside mutation")
             const res = await service.createUser(input);
+            pubSub.publish('USER_CREATED', {userCreated: "user was created!"});
             return res.payload;
         }
+    },
+    subscription:{
+        userCreated:{
+            subscribe: ()=> pubSub.asyncIterator('USER_CREATED')
+        } 
     }
 }

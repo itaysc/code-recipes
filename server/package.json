@@ -4,7 +4,7 @@
   "description": "code-recipes",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --inspect -r dotenv/config --watch 'src/**/*.js' --exec babel-node src/index.js",
+    "dev": "nodemon --inspect -r dotenv/config --watch 'src/*' --exec babel-node src/index.js",
     "dev2": "nodemon --inspect --watch 'src/**/*.js' --exec babel-node src/index.js",
     "build": "rimraf dist &&  webpack --env production --mode production",
     "start": "set NODE_ENV=production && node ./dist/main.js",
@@ -17,6 +17,7 @@
   "author": "Itay Schmidt",
   "license": "ISC",
   "dependencies": {
+    "@graphql-tools/schema": "^8.0.3",
     "apollo-server-express": "^3.1.1",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
@@ -24,10 +25,12 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^15.5.1",
+    "graphql-subscriptions": "^1.2.1",
     "graphql-tools": "^8.0.0",
     "joi": "^17.4.1",
     "mocha": "^9.0.3",
-    "mongoose": "^5.13.4"
+    "mongoose": "^5.13.4",
+    "subscriptions-transport-ws": "^0.9.19"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",

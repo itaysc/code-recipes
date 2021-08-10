@@ -1,6 +1,6 @@
 require('dotenv').config()
 import express from "express";
-import { createServer} from "http";
+import http, { createServer} from "http";
 import bodyParser from 'body-parser';
 import cors  from 'cors';
 import {validateRequest} from './middleware';
@@ -16,7 +16,7 @@ export class Server {
         this.initialize();
         this.initRoutesMiddlewares();
         this.initRoutes();
-        createApolloServer(this.app);
+        this.apolloServer = createApolloServer(this.app, this.httpServer);
     }
 
     initialize = ()=>{
@@ -35,7 +35,7 @@ export class Server {
         const router = express.Router();
         this.router = router;
         this.app = app;
-        this.DEFAULT_PORT = process.env.PORT || 3001;
+        this.DEFAULT_PORT = process.env.PORT || 4000;
         this.httpServer = createServer(this.app);
         
     }

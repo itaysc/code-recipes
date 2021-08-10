@@ -12,4 +12,8 @@ const Mutation = {
     ...recipeResolver.mutation
 }
 
-module.exports = { Query, Mutation };
+const Subscription = {
+    ...userResolver.subscription
+}
+
+module.exports = { Query, Mutation, Subscription };
