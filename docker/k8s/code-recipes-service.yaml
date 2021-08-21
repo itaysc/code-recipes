@@ -1,0 +1,14 @@
+# BodePort makes a pod accessible outside the cluster, for development purposes
+apiVersion: v1
+kind: Service
+metadata: 
+  name: code-recipes-nodeport-service
+spec:
+  type: NodePort
+  selector:
+    app: code-recipes
+  ports:
+    - name: code-recipes
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
