@@ -6,5 +6,8 @@
         "kubernetes",
         "nodeport",
         "skaffold"
+    ],
+    "cSpell.ignoreWords": [
+        "nats"
     ]
 }
