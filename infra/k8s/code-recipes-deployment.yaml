@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: code-recipes
-          image: itayschmidt/code-recipes:latest
+          image: itayschmidt/code-recipes
 ---
 # clusterIp service- set up an easy-to-remember url to access the pod. only exposes to pods in the cluster
 apiVersion: v1

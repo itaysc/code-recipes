@@ -1,7 +1,7 @@
-const User = require('./user');
-const Recipe = require('./recipe');
+import User from './user';
+import Recipe from './recipe';
 
-module.exports = {
+export default {
     User,
     Recipe
 }

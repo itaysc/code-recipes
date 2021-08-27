@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+
 const Schama = mongoose.Schema;
-const bcrypt = require('bcrypt');
 const SALT_WORK_FACTOR = 10;
 const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 const UserSchema = new Schama({
@@ -117,4 +118,4 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
 };
 
 const User = mongoose.model('user', UserSchema);
-module.exports = User;
+export default User;

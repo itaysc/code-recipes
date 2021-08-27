@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schama = mongoose.Schema;
 
 const ThumbSchema = new Schama({
@@ -72,4 +72,4 @@ RecipeSchema.post('deleteOne', { query: true, document: true }, async function(n
 
 
 const Recipe = mongoose.model('recipe', RecipeSchema);
-module.exports = Recipe;
+export default Recipe;

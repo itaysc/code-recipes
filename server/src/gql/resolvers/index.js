@@ -16,4 +16,4 @@ const Subscription = {
     ...userResolver.subscription
 }
 
-module.exports = { Query, Mutation, Subscription };
+export default { Query, Mutation, Subscription };

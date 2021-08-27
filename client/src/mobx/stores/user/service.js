@@ -8,26 +8,29 @@ const basicHeaders = {
 }
 
 class UserService{
-    getAllUsers = async()=>{
-        const {data: {users}} = await apolloClient.query({
-            query: queries.getAllUsers, 
-            variables: {}, 
-            fetchPolicy: 'no-cache'})
-        return Promise.resolve(users);
-    }
-
-    createUser = async(input)=>{
-        const {data: {user}} = await apolloClient.mutate({
-            mutation: queries.createUser,
-            variables: {input},
-            update: (cache, mutationResult)=>{ // this runs after mitation and lets us change the cache
-                // console.log(mutationResult.data)
-                cache.writeQuery({query: queries.getAllUsers, variables: {}, data})
-            }
+    getAllUser = () => {
         
-        })
-        return Promise.resolve(user);
     }
+    // getAllUsers = async()=>{
+    //     const {data: {users}} = await apolloClient.query({
+    //         query: queries.getAllUsers, 
+    //         variables: {}, 
+    //         fetchPolicy: 'no-cache'})
+    //     return Promise.resolve(users);
+    // }
+
+    // createUser = async(input)=>{
+    //     const {data: {user}} = await apolloClient.mutate({
+    //         mutation: queries.createUser,
+    //         variables: {input},
+    //         update: (cache, mutationResult)=>{ // this runs after mitation and lets us change the cache
+    //             // console.log(mutationResult.data)
+    //             cache.writeQuery({query: queries.getAllUsers, variables: {}, data})
+    //         }
+        
+    //     })
+    //     return Promise.resolve(user);
+    // }
 }
 
 export default UserService;

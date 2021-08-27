@@ -6,4 +6,6 @@ const stan = nats.connect('ticketing', 'abc', {
 
 stan.on('connect', () => {
     console.log("Publisher connected to NATS");
+
+    
 })

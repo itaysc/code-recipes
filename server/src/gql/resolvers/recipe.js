@@ -1,7 +1,7 @@
 import recipeService from '../../services/recipe';
 const service = recipeService();
 console.log("*****   ", typeof service)
-module.exports =  {
+export default  {
     query:{
         getAllRecipes: async(root, {})=>{
             const res = await service.getAllRecipes();

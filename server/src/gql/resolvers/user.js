@@ -2,7 +2,7 @@ import { PubSub } from 'graphql-subscriptions';
 import userService from '../../services/user';
 const service = userService();
 const pubSub = new PubSub();
-module.exports =  {
+export default {
     query:{
         getUserByUserName: async(root, {userName})=>{
             const res = await service.getUserByUserName(userName);

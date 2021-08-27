@@ -37,6 +37,7 @@ metadata:
 spec:
   selector:
     app: nats
+  type: ClusterIP 
   ports:
   - name: client
     protocol: TCP
