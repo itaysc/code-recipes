@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: code-recipes-mongo-deployment
+  name: foozool-mongo-deployment
 spec: 
   replicas: 1
   selector:
     matchLabels:
-      app: code-recipes-mongo
+      app: foozool-mongo
   template:
     metadata:
       labels:
-          app: code-recipes-mongo
+          app: foozool-mongo
     spec:
       containers:
-        - name: code-recipes-mongo
+        - name: foozool-mongo
           image: mongo
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: code-recipes-mongo-service
+  name: foozool-mongo-service
 spec:
   selector:
-    app: code-recipes-mongo
+    app: foozool-mongo
   type: ClusterIP 
   ports:
     - name: db

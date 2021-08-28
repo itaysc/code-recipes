@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: code-recipes-client-deployment
+  name: foozool-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: code-recipes-client
+      app: foozool
   template:
     metadata:
       labels:
-        app: code-recipes-client
+        app: foozool
     spec:
       containers:
-        - name: code-recipes-client
-          image: itayschmidt/code-recipes-client
+        - name: foozool
+          image: itayschmidt/foozool
 ---
 # clusterIp service- set up an easy-to-remember url to access the pod. only exposes to pods in the cluster
 apiVersion: v1
 kind: Service
 metadata: 
-  name: code-recipes-client-service
+  name: foozool-service
 spec:
   selector:
-    app: code-recipes-client
+    app: foozool
   type: ClusterIP 
   ports:
-    - name: code-recipes-client
+    - name: foozool
       protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 4000
+      targetPort: 4000
 
 

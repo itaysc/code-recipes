@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: Service
 metadata: 
-  name: code-recipes-nodeport-service
+  name: foozool-nodeport-service
 spec:
   type: NodePort
   selector:
-    app: code-recipes
+    app: foozool
   ports:
-    - name: code-recipes
+    - name: foozool
       protocol: TCP
       port: 4000
       targetPort: 4000

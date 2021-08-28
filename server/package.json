@@ -1,7 +1,7 @@
 {
-  "name": "code-recipes",
+  "name": "foozool",
   "version": "1.0.0",
-  "description": "code-recipes",
+  "description": "foozool",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon --inspect -r dotenv/config --watch 'src/*' --exec babel-node src/index.js",
@@ -13,7 +13,7 @@
     "test-min": "nodemon --exec 'mocha ./src/test/**/*.js -R min'"
   },
   "keywords": [
-    "code-recipes"
+    "foozool"
   ],
   "author": "Itay Schmidt",
   "license": "ISC",

@@ -27,7 +27,7 @@ spec:
             '-hbf',
             '2',
             '-cid',
-            'ticketing'
+            'user'
           ]
 ---
 apiVersion: v1
@@ -45,5 +45,5 @@ spec:
     targetPort: 4222
   - name: monitoring
     protocol: TCP
-    port: 822
-    targetPort: 822
+    port: 8222
+    targetPort: 8222

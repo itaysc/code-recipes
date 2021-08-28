@@ -7,7 +7,7 @@ import {validateRequest} from './middleware';
 import mongoose from 'mongoose';
 import initUserRoutes from './routes/user';
 import { createApolloServer } from './gql/server';
-const {MONGO_CONNECTION_STRING}= process.env;//"mongodb://mongo-db:27017/code-recipes";
+const {MONGO_CONNECTION_STRING}= process.env;//"mongodb://mongo-db:27017/foozool";
 console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   MONGO_CONNECTION_STRING ", MONGO_CONNECTION_STRING)
 mongoose.Promise = global.Promise;
 

@@ -8,7 +8,7 @@ build:
   local:
     push: false # no need to push to docker hub
   artifacts:
-    - image: itayschmidt/code-recipes-client
+    - image: itayschmidt/foozool-client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: itayschmidt/code-recipes
+    - image: itayschmidt/foozool
       context: server
       docker:
         dockerfile: Dockerfile
