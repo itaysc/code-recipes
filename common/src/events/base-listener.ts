@@ -32,7 +32,7 @@ export abstract class Listener<T extends Event> {
         /** the second arg. is a queue group, only one listener inside the group will get a published event
             so if, for example, we have 2 replicas of the same service (listener) and we want only one of them to handle the
             event, we will use same queue group name in both of them */
-        const subscription = this.client.subscribe(
+        const subscription: any = this.client.subscribe(
             this.subject,
             this.queueGroupName,
             this.subscriptionOptions()

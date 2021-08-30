@@ -1,0 +1,21 @@
+{
+  "name": "@foozool/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist/* && tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-nats-streaming": "^0.3.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
