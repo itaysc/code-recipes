@@ -1,6 +1,6 @@
 {
   "name": "@foozool/common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -8,7 +8,9 @@
     "build/**/*"
   ],
   "scripts": {
-    "build": "rimraf ./dist/* && tsc"
+    "build": "rimraf ./dist/* && tsc",
+    "version-patch": "npm version patch",
+    "pub": "git add . && git commit -m\"Updates\" && npm version patch && npm run build && npm publish"
   },
   "author": "",
   "license": "ISC",
