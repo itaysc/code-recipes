@@ -15,6 +15,11 @@ spec:
       containers:
         - name: foozool
           image: itayschmidt/foozool
+          env:
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name # we want to use the service name as nats client id
 ---
 # clusterIp service- set up an easy-to-remember url to access the pod. only exposes to pods in the cluster
 apiVersion: v1

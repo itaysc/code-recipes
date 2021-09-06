@@ -15,6 +15,9 @@ spec:
       containers:
         - name: foozool-client
           image: itayschmidt/foozool-client
+          env:
+            - name: API_URL
+              value: http://foozool-service/api
 ---
 # clusterIp service- set up an easy-to-remember url to access the pod. only exposes to pods in the cluster
 apiVersion: v1

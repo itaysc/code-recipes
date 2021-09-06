@@ -14,7 +14,7 @@ export default (
             return res.status(500).send(err);
         }
     });
-    app.post("/api/users", validateRequest(validations.user), async (req, res) => {
+    app.post("/users", validateRequest(validations.user), async (req, res) => {
         try {
             const _response = await service.createUser(req.body);
             return res.status(_response.status).send(_response.payload);
