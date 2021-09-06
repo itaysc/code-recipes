@@ -1,6 +1,5 @@
 import recipeService from '../../services/recipe';
 const service = recipeService();
-console.log("*****   ", typeof service)
 export default  {
     query:{
         getAllRecipes: async(root, {})=>{

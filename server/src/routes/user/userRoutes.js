@@ -16,6 +16,7 @@ export default (
     });
     app.post("/users", validateRequest(validations.user), async (req, res) => {
         try {
+            console.log('inside /users route')
             const _response = await service.createUser(req.body);
             return res.status(_response.status).send(_response.payload);
         } catch (err) {

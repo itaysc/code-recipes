@@ -8,14 +8,14 @@ build:
   local:
     push: false # no need to push to docker hub
   artifacts:
-    - image: itayschmidt/foozool-client
-      context: client
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: '**/*.js'
-            dest: .
+    # - image: itayschmidt/foozool-client
+    #   context: client
+    #   docker:
+    #     dockerfile: Dockerfile
+    #   sync:
+    #     manual:
+    #       - src: '**/*.js'
+    #         dest: .
     - image: itayschmidt/foozool
       context: server
       docker:
@@ -23,4 +23,4 @@ build:
       sync:
         manual:
           - src: 'src/**/*.js'
-            dest: .
+            dest: '.'

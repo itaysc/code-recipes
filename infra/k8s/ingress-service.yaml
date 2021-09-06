@@ -1,23 +1,24 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-service
+  name: foozool-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2 # remove the /api/
+    ingress.kubernetes.io/ssl-redirect: "false"
   name: rewrite
   namespace: default
 spec:
   rules:
-  - host: foozool.dev # add this in /etc/hosts
-    http:
-      paths:
-        - path: /api/
-          pathType: Prefix
-          backend:
-            service:
-              name: foozool-service
-              port:
-                number: 4000
+    - host: foozool.dev # add this in /etc/hosts
+      http:
+        paths:
+          - path: /api(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: foozool-service
+                port:
+                  number: 4000
         # - path: /?(.*)
         #   pathType: Prefix
         #   backend:
