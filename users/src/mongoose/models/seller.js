@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import Review from './review';
 import Address from './address';
 const Schama = mongoose.Schema;
 
-const StoreSchema = new Schama({
+const SellerSchema = new Schama({
     name: {
         type: String,
         trim: true,
@@ -18,7 +18,7 @@ const StoreSchema = new Schama({
         type: [Address],
         required: true
     },
-    phone: {
+    phones: [{
         type: String,
         unique: false,
         validate: {
@@ -28,7 +28,7 @@ const StoreSchema = new Schama({
             message: props => `${props.value} is not a valid phone number!`
         },
         required: false
-    },
+    }],
     isChainStore: {
         type: Boolean,
         default: false
@@ -36,6 +36,14 @@ const StoreSchema = new Schama({
     useDelivery: {
         type: Boolean,
         default: true 
+    },
+    reviews: {
+        type: [Review]
+    },
+    score: {
+        type: Number,
+        min: 1,
+        max: 5,
     },
     isActive: {
         type: Boolean,
@@ -48,5 +56,5 @@ const StoreSchema = new Schama({
     },
 })
 
-const User = mongoose.model('store', StoreSchema);
-export default User;
+const Seller = mongoose.model('seller', SellerSchema);
+export default Seller;

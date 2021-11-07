@@ -7,13 +7,13 @@ import {
 } from "react-router-dom";
 import { AppContainer } from './containers';
 import './App.css';
-
+import 'react-phone-input-2/lib/style.css'
 
 function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/">
+          <Route path="/">
               <AppContainer />
           </Route>
       </Switch>

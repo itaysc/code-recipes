@@ -5,16 +5,17 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { Home } from './pages';
-export default (props)=>{
+import { Home, SignUp } from './pages';
+const MainRouter =  (props)=>{
     return (
         <Router>
            <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
+                <Route exact path="/"><Home /></Route>
+                <Route exact path="/signup"><SignUp /></Route>
            </Switch>
         </Router>
      
     )
 }
+
+export default MainRouter;

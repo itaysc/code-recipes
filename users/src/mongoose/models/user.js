@@ -62,6 +62,10 @@ const UserSchema = new Schama({
         trim: true,
         default: null
     },
+    updatedAt:{
+        type: Date,
+        default: new Date(),
+    },
     createdAt:{
         type: Date,
         default: new Date(),
