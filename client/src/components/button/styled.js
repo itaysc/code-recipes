@@ -16,6 +16,15 @@ export const Button = styled.a`${p => {
     if(p.disabled) {
         styles = '';
     }
+    let mobileMainBtnStyles = `
+        position: absolute;
+        bottom: 0;
+        height: 40px;
+        width: 100vw;
+    `;
+    if(!p.isMobileMainBtn) {
+        mobileMainBtnStyles = '';
+    }
     return `
     width: 100%;
     display: flex;
@@ -35,5 +44,8 @@ export const Button = styled.a`${p => {
     box-shadow: 0 0 4px #999;
     outline: none;
     ${styles}
+    ${theme.screen.mobile} {
+        ${mobileMainBtnStyles}
+    }
 `}}
 `;

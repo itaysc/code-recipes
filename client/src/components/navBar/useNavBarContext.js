@@ -4,27 +4,27 @@ const NavBarContext = React.createContext(null);
 
 const NavBarProvider = ({children}) => {
     const [showBackButton, setShowBackButton] = React.useState(false);
-    const [backBtnAction, setBackBtnAction] = React.useState(undefined);
+    const [backButtonAction, _setBackButtonAction] = React.useState(undefined);
     const {t} = useTranslation();
     const [title, setTitle] = React.useState(t('foozool'));
 
-    const setBackButton = (action=null) =>{
+    const setBackButtonAction = (action=null) =>{
         if(!action) {
             setShowBackButton(false);
-            setBackBtnAction(undefined);
+            _setBackButtonAction(undefined);
         } else {
             setShowBackButton(true);
-            setBackBtnAction(action);
+            _setBackButtonAction(action);
         }
     }
     return (
         <NavBarContext.Provider value={{
             showBackButton, 
             setShowBackButton,
-            setBackButton,
+            backButtonAction,
+            setBackButtonAction,
             title,
             setTitle,
-            backBtnAction,
             }}>
             {children}
         </NavBarContext.Provider>

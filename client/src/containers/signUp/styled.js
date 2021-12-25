@@ -41,7 +41,10 @@ export const PhoneNoContainer = styled.div`
 
 export const BottomButtonContainer = styled.div`
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
+    ${theme.screen.notMobile} {
+        bottom: 50px;
+    }
     margin-top: 100px;
     width: 90%;
     align-self: center;
@@ -67,5 +70,12 @@ export const OtherOption = styled(MenuItem)`
 `;
 
 export const OtpContainer = styled(HCenterBox)`
-    display
+    margin-top: 10px;
+`;
+
+export const OtpError = styled.span`
+    color: ${theme.colors.crayola};
+    visibility: ${p=> p.show ? 'visible': 'hidden'};
+    font-size: ${theme.fontSize.small};
+    margin: 0 auto;
 `;

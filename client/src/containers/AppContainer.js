@@ -4,12 +4,16 @@ import Router from '../Router';
 import theme from '../theme';
 import { NavBar } from '../components';
 import {NavBarProvider} from '../components/navBar/useNavBarContext';
+import { SpinnerProvider } from '../hooks/useSpinner';
+
 function App() {
   return (
     <Container>
       <NavBarProvider>
         <NavBar/>
-        <Router/>
+        <SpinnerProvider>
+          <Router/>
+        </SpinnerProvider>
       </NavBarProvider>
     </Container>
   );

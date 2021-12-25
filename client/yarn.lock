@@ -8727,6 +8727,11 @@ performance-now@^2.1.0:
   resolved "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
+phone@^3.1.10:
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/phone/-/phone-3.1.10.tgz#7e9954b1cf8dcac2cf4f45bfd1e4f55e3833dcaf"
+  integrity sha512-YhUCaFzvp2nGuAL/KkYZ1qDm8E51PkQswDFSzAmQ8jgNt6TU6iHMxp4KEQ2J/mFk9zco84iq6D2j5z7fm7W9Vw==
+
 picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1, picomatch@^2.2.2:
   version "2.2.2"
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.2.2.tgz"
@@ -9825,6 +9830,13 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-loader-spinner@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-4.0.0.tgz#43d9e71b0574219f64216933c28ef5faa12262f6"
+  integrity sha512-RU2vpEej6G4ECei0h3q6bgLU10of9Lw5O+4AwF/mtkrX5oY20Sh/AxoPJ7etbrs/7Q3u4jN5qwCwGLRKCHpk6g==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-mobx@^0.0.4:
   version "0.0.4"

@@ -17,7 +17,7 @@ const NavBar = (props)=>{
             <styled.Left>
             {
                 context.showBackButton &&                 
-                <styled.MobileBackBtn onClick={context.backBtnAction}>
+                <styled.MobileBackBtn onClick={context.backButtonAction}>
                     arrow_back
                 </styled.MobileBackBtn>
 
